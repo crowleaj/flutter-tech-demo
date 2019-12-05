@@ -59,7 +59,6 @@ class _LoginScreen extends State<LoginScreen> {
           },
         ));
 
-    bool notNull(Object o) => o != null;
     return Scaffold(
         backgroundColor: Colors.lightBlue,
         body: Center(
