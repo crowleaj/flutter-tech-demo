@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:hello_flutter/appointments.dart';
-import 'package:hello_flutter/home.dart';
-import 'package:hello_flutter/login.dart';
+import 'package:hello_flutter/screens/appointments/appointments.dart';
+import 'package:hello_flutter/screens/login/login.dart';
 import 'package:hello_flutter/oauth-service.dart';
+import 'package:hello_flutter/screens/home/home.dart';
 
 void main() {
   OAuthService();
