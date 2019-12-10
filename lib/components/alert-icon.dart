@@ -17,7 +17,7 @@ class AlertIcon extends StatelessWidget {
                   child: new Container(
                     padding: EdgeInsets.all(1),
                     decoration: new BoxDecoration(
-                      color: Colors.purple,
+                      color: Theme.of(context).accentColor,
                       borderRadius: BorderRadius.circular(6),
                     ),
                     constraints: BoxConstraints(
@@ -27,7 +27,6 @@ class AlertIcon extends StatelessWidget {
                     child: new Text(
                       alertCount.toString(),
                       style: new TextStyle(
-                        color: Colors.white,
                         fontSize: 10,
                       ),
                       textAlign: TextAlign.center,

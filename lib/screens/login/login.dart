@@ -60,7 +60,7 @@ class _LoginScreen extends State<LoginScreen> {
         ));
 
     return Scaffold(
-        backgroundColor: Colors.lightBlue,
+        backgroundColor: Theme.of(context).primaryColor,
         body: Center(
             child: Padding(
                 padding: EdgeInsets.all(16.0),

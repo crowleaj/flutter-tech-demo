@@ -16,8 +16,7 @@ class StyledButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return RaisedButton(
       child: Text(text),
-      color: Colors.purple,
-      textColor: Colors.white,
+      color: Theme.of(context).accentColor,
       shape: new RoundedRectangleBorder(
               borderRadius: new BorderRadius.circular(32.0)),
       onPressed: onPressed,
