@@ -9,8 +9,9 @@ class MenuPage extends StatelessWidget {
       // Saved with this method.
       var dest = AndroidDestinationType.directoryDCIM;
       dest.subDirectory("Lifeshare");
-      var imageId = await ImageDownloader.downloadImage("https://raw.githubusercontent.com/wiki/ko2ic/image_downloader/images/flutter.png",
-      destination: dest);
+      var imageId = await ImageDownloader.downloadImage(
+          "https://raw.githubusercontent.com/wiki/ko2ic/image_downloader/images/flutter.png",
+          destination: dest);
       if (imageId == null) {
         return;
       }
@@ -38,18 +39,24 @@ class MenuPage extends StatelessWidget {
       ),
     );
     _controller.setSize(Size.fromHeight(20));
+    var view = GridView.count(
+      crossAxisCount: 2,
+      children: <Widget>[
+        SizedBox(
+          height: 150,
+          width: 150,
+          child: YoutubePlayer(
+              controller: _controller,
+              showVideoProgressIndicator: true,
+              progressColors: ProgressBarColors(
+                playedColor: Colors.amber,
+                handleColor: Colors.amberAccent,
+              )),
+        ),
+        Image(image: NetworkImage("https://raw.githubusercontent.com/wiki/ko2ic/image_downloader/images/flutter.png"),)
+      ],
+    );
     // TODO: implement build
-    return Center(
-        child: SizedBox(
-      height: 150,
-      width: 150,
-      child: YoutubePlayer(
-          controller: _controller,
-          showVideoProgressIndicator: true,
-          progressColors: ProgressBarColors(
-            playedColor: Colors.amber,
-            handleColor: Colors.amberAccent,
-          )),
-    ));
+    return view;
   }
 }
