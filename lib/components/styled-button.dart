@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-noop() {}
+import '../utils.dart';
 
 class StyledButton extends StatelessWidget {
   final String text;
   final Function onPressed;
 
-  StyledButton({@required this.text, this.onPressed = noop});
+  StyledButton({@required this.text, this.onPressed = Utils.noop});
 
   @override
   Widget build(BuildContext context) {
