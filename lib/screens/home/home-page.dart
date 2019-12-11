@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hello_flutter/components/announcement-carousel.dart';
 import 'package:hello_flutter/components/styled-button.dart';
 
 class HomePage extends StatelessWidget {
@@ -10,16 +11,6 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Widget picturesVideoContent = Column(children: [
-      Container(
-          padding: EdgeInsets.all(2),
-          decoration: BoxDecoration(border: Border.all()),
-          child: Image.asset("assets/images/o'hooligan.jpeg")),
-      Align(
-          alignment: Alignment.bottomLeft,
-          child: StyledButton(text: "Pictures & Videos"))
-    ]);
-
     Widget eventBuilder = ListView.builder(
         itemCount: events.length,
         itemBuilder: (BuildContext context, int index) {
@@ -53,7 +44,7 @@ class HomePage extends StatelessWidget {
       tiles: [
         Card(
             child: Padding(
-                padding: EdgeInsets.all(10), child: picturesVideoContent)),
+                padding: EdgeInsets.all(10), child: AnnouncementCarousel())),
         Card(
           child: eventContent,
         ),
