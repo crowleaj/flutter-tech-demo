@@ -2,22 +2,15 @@ import 'dart:collection';
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:hello_flutter/entities/announcement.dart';
+
+import '../utils.dart';
 
 List<Announcement> slides = [
     Announcement("Important", "This is Very important"),
     Announcement("Change Coming", "Rule changes will be coming soonRule changes will be coming soonRule changes will be coming soonRule changes will be coming soon"),
     Announcement("Important 2", "This is Very important"),
   ];
-
-// Go through the list of items and pass each one to the handler, which basically maps each element to
-// its own dot for the slide indicator.
-List<T> map<T>(List list, Function handler) {
-  List<T> result = [];
-  for (var i = 0; i < list.length; i++) {
-    result.add(handler(i, list[i]));
-  }
-  return result;
-}
 
 class AnnouncementCarousel extends StatefulWidget {
   @override
@@ -67,7 +60,7 @@ class _AnnouncementCarouselWithIndicator extends State<AnnouncementCarousel> {
         ),
         Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: map<Widget>(slides, (index, url) {
+            children: Utils.map<Widget>(slides, (index, url) {
               return Container(
                 width: 8.0,
                 height: 8.0,
@@ -80,16 +73,5 @@ class _AnnouncementCarouselWithIndicator extends State<AnnouncementCarousel> {
             }),
           )
       ]);
-  }
-}
-
-class Announcement extends Object {
-  String title;
-  String text;
-
-  Announcement(title, text)
-  {
-    this.title = title;
-    this.text = text;
   }
 }
